@@ -39,7 +39,7 @@ window.addEventListener('load', async () => {
       }
   }
 
-  const bannerInstall = docum.querySelector("#banner-install");
+  const bannerInstall = document.querySelector("#banner-install");
   bannerInstall.addEventListener('click', async () => {
     if(deferredPrompt){
       deferredPrompt.prompt();
