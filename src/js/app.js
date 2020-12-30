@@ -38,4 +38,15 @@ window.addEventListener('load', async () => {
           console.info('Service worker registrado');
       }
   }
+
+  const bannerInstall = docum.querySelector("#banner-install");
+  bannerInstall.addEventListener('click', async () => {
+    if(deferredPrompt){
+      deferredPrompt.prompt();
+      const response = await deferredPrompt.userChoice;
+      if(response.outcome === 'dismissed'){
+        console.error('El usuario canceló la instalación');
+      }
+    }
+  });
 });
